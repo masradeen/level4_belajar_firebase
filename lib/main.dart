@@ -31,22 +31,26 @@ class _MyAppState extends State<MyApp> {
       routes: {
         UserPage.nameRoute: (context) => UserPage(),
       },
-      home: Scaffold(
-        appBar: AppBar(
-          // title: TextField(controller: controller),
-          title: Text('User App Firebase'),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () {
-                // final name = controller.text;
-                // createUser(name: name);
-                Navigator.of(context).pushNamed(UserPage.nameRoute);
-              },
-            ),
-          ],
-        ),
-      ),
+      home: UserPage(),
+      // Scaffold(
+      //   appBar: AppBar(
+      //     // title: TextField(controller: controller),
+      //     title: Text('User App Firebase'),
+      //     actions: [
+      //       IconButton(
+      //         icon: Icon(Icons.add),
+      //         onPressed: () {
+      //           // final name = controller.text;
+      //           // createUser(name: name);
+      //           Navigator.push(
+      //             context,
+      //             MaterialPageRoute(builder: (context) => const UserPage()),
+      //           );
+      //         },
+      //       ),
+      //     ],
+      //   ),
+      // ),
     );
   }
 
