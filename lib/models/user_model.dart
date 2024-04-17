@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class User {
@@ -19,4 +20,11 @@ class User {
     'age': age,
     'birthday': birthday,
   };
+
+  static User fromJson(Map<String, dynamic> json) => User(
+    id: json['id'],
+    name: json['name'],
+    age: json['age'],
+    birthday: (json['birthday'] as Timestamp).toDate(),
+  );
 }

@@ -12,7 +12,6 @@ class UserPage extends StatefulWidget {
 }
 
 class _UserPageState extends State<UserPage> {
-
   final controllerName = TextEditingController();
   final controllerAge = TextEditingController();
   final controllerDate = TextEditingController();
@@ -24,6 +23,15 @@ class _UserPageState extends State<UserPage> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('Add User'),
+          leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
+            icon: Icon(
+              Icons.arrow_back_ios,
+              color: Color(0xFF222158),
+            ),
+          ),
         ),
         body: ListView(
           padding: EdgeInsets.all(16),
@@ -72,7 +80,7 @@ class _UserPageState extends State<UserPage> {
             ),
             ElevatedButton(
               child: Text('Create'),
-              onPressed: (){
+              onPressed: () {
                 final user = User(
                   name: controllerName.text,
                   age: int.parse(controllerAge.text),
@@ -99,7 +107,7 @@ class _UserPageState extends State<UserPage> {
       lastDate: DateTime(2100),
     );
 
-    if(_picked != null){
+    if (_picked != null) {
       setState(() {
         controllerDate.text = _picked.toString().split(" ")[0];
       });
